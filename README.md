@@ -10,29 +10,26 @@ git clone [<API_REPOSITORY_URL>](https://github.com/saharaharondev/recipes-app.g
 ### fastAPI Installation
 
 cd fastAPI
+
 python -m venv env
+
 .\env\Scripts\activate
+
 pip install -r requirements.txt
+
 cp .env.keys.env .env
+
 uvicorn main:app --reload
+
 
 ### Setting Up the React Native App
 cd recipe-app
+
 npm install
+
 cp .env.keys.env .env
+
 npx expo start
-
-
-
-// run fast api server with ypur keys
-
-cd recipe-app // get in the react native app
-
-npm install // install dependecies
-
-cp .env.keys.env // make you own keys file
-
-npx expo start // start the app
 
 
 ## Technologies Used
