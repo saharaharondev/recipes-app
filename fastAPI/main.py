@@ -2,6 +2,10 @@ from fastapi import FastAPI, HTTPException
 from supabase import create_client, Client
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+import os
+from dotenv import load_dotenv
+# from supabase.env import supabase_url,supabase_anon_key
+load_dotenv()
 
 app = FastAPI()
 origins = [
@@ -14,12 +18,15 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
     allow_credentials=True,
-    allow_methods=["*"],adsa
+    allow_methods=["*"],
     allow_headers=["*"],
 )
 
-supabase_url = "<your supabase url>"
-supabase_anon_key = "<your supabase key>"
+supabase_url = os.getenv("SUPABASE_URL")
+supabase_anon_key = os.getenv("SUPABASE_ANON_KEY")
+# print(supabase_url,supabase_anon_key)
+# supabase_url = "<your supabase url>"
+# supabase_anon_key = "<your supabase key>"
 supabase: Client = create_client(supabase_url, supabase_anon_key)
 
 @app.get("/recipes/")
@@ -79,11 +86,3 @@ async def save_recipe(recipe: Recipe):
         print(f"Error: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
-
-
-@app.get("/hello/{name}")
-async def say_hello(name: str):
-    return {"message": f"Hello {name}"}
