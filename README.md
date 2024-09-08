@@ -7,9 +7,13 @@ allows users to save, modify, and generate shopping lists using GPT-4.
 
 ## Installation
 // run fast api server with ypur keys
+
 cd recipe-app // get in the react native app
+
 npm install // install dependecies
+
 cp .env.keys.env // make you own keys file
+
 npx expo start // start the app
 
 
