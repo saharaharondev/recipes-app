@@ -17,17 +17,18 @@ python -m venv env
 
 pip install -r requirements.txt
 
-cp .env.keys.env .env
+**make your env variables**
 
 uvicorn main:app --reload
 
 
 ### Setting Up the React Native App
+
 cd recipe-app
 
 npm install
 
-cp .env.keys.env .env
+**make your env variables**
 
 npx expo start
 
@@ -41,5 +42,14 @@ npx expo start
 - GPT-4 (via RapidAPI)
 - recipes (via RapidAPI)
 
-## video
+## video of the app
   [![Watch the video](https://img.youtube.com/vi/your-video-id/maxresdefault.jpg)](https://www.youtube.com/watch?v=OTuKZQx2mAE)
+
+## potential improvments
+
+    Add a new recipe option
+    Enhance shopping list generation
+    Incorporate AI/ML for recipe recommendations
+    Deploy FastAPI server online
+    Integrate shopping list with Shufersal online
+    Support Hebrew
