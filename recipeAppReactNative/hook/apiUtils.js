@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { RAPIDAPI_KEY } from '@env'; // Import the key from .env file
 
 export const generateShoppingListWithGPT = async (shoppingList, setOptimizedShoppingList, setIsGenerating, setError) => {
     setIsGenerating(true);
@@ -31,7 +32,7 @@ export const generateShoppingListWithGPT = async (shoppingList, setOptimizedShop
             web_access: false
         }, {
             headers: {
-                'x-rapidapi-key': '3141372994msh87ca7465c80b920p1e212bjsn2371b415e361',
+                'x-rapidapi-key': RAPIDAPI_KEY,
                 'x-rapidapi-host': 'chatgpt-42.p.rapidapi.com',
                 'Content-Type': 'application/json'
             }

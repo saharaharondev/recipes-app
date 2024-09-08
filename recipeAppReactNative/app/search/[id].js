@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, FlatList, View, Image, TouchableOpacity, Text, SafeAreaView } from 'react-native';
 import { Stack, useRouter, useSearchParams } from 'expo-router';
 import axios from 'axios';
+import { RAPIDAPI_KEY } from '@env'; 
 
 import { ScreenHeaderBtn } from '../../components';
 import { COLORS, icons, SIZES } from '../../constants';
@@ -26,7 +27,7 @@ const RecipeSearch = () => {
                 method: "GET",
                 url: 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search',
                 headers: {
-                    'x-rapidapi-key': '3141372994msh87ca7465c80b920p1e212bjsn2371b415e361',
+                    'x-rapidapi-key': RAPIDAPI_KEY,
                     'x-rapidapi-host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
                 },
                 params: {
